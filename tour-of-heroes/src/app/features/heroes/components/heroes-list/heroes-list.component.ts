@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
-import {Hero} from '../../beans/hero';
-import {HeroService} from '../../services/hero.service';
+import { Hero } from '../../../../beans/hero';
+import { HeroService } from '../../../../services/hero.service';
 
 @Component({
-  selector: 'my-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css']
+  selector: 'app-heroes-list',
+  templateUrl: './heroes-list.component.html',
+  styleUrls: ['./heroes-list.component.css']
 })
-export class HeroesComponent implements OnInit {
+export class HeroesListComponent implements OnInit {
   heroes: Hero[];
   constructor(
     private heroService: HeroService,
@@ -26,7 +26,7 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
   gotoDetail(): void {
-    this.router.navigate(['/detail',this.selectedHero.id]);
+    this.router.navigate(['/heroes',this.selectedHero.id]);
   }
   add(name: string): void {
     name = name.trim();
