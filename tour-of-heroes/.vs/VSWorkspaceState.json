@@ -4,11 +4,8 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\beans",
-    "\\src\\app\\components",
-    "\\src\\app\\components\\hero-detail",
     "\\src\\app\\mocks",
     "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\components\\hero-detail\\hero-detail.component.ts",
   "PreviewInSolutionExplorer": false
 }
