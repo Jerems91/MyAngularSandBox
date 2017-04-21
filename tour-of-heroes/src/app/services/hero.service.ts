@@ -5,9 +5,11 @@ import 'rxjs/add/operator/toPromise';
 
 import {Hero} from '../beans/hero';
 
+import { environment } from '../../environments/environment';
+
 @Injectable()
 export class HeroService {
-  private heroesUrl = 'api/heroes';
+  private heroesUrl = environment.API_URL;
 
   constructor(private http: Http) {}
 
