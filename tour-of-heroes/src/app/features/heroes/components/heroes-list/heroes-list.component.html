@@ -1,15 +1,19 @@
-<ul class="heroes">
-  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero===selectedHero">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
-    <button class="delete" (click)="delete(hero); $event.stopPropagation()">x</button>
-  </li>
-</ul>
-<div *ngIf="selectedHero">
-  <h2>{{selectedHero.name | uppercase}} is my hero</h2>
-  <button (click)="gotoDetail()">View Details</button>
+<div class="container">
+  <div class="list-group">
+    <button class="list-group-item" *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.active]="hero===selectedHero">
+      <span class="badge">{{hero.id}}</span> <b>{{hero.name}}</b>
+      <div *ngIf="hero===selectedHero">
+        <div class="btn-group btn-group-xs">
+          <button class="btn btn-danger" (click)="delete(hero); $event.stopPropagation()">Delete</button>
+          <button class="btn btn-default" (click)="gotoDetail()">Edit</button>
+        </div>  
+      </div>
+    </button>
+  </div>
 </div>
-<div>
+<div class="container">
   <label>Hero name:</label>
   <input #heroName />
   <button (click)="add(heroName.value); heroName.value=''">Add</button>
 </div>
+
