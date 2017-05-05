@@ -4,17 +4,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
-// Imports for loading & configuring the in-memory web api
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './mocks/in-memory-data.service';
-
 import { DashboardModule } from './features/dashboard/dashboard.module';
 import { HeroesModule } from './features/heroes/heroes.module';
 
 import { AppComponent } from './app.component';
 
 import { HeroService } from './services/hero.service';
-import { HeroSearchService } from './services/hero-search.service';
+import { HeroSearchService } from './services/hero-search.service';   
 
 @NgModule({
   declarations: [
@@ -25,8 +21,7 @@ import { HeroSearchService } from './services/hero-search.service';
     HttpModule,
     DashboardModule,
     HeroesModule,
-    AppRoutingModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    AppRoutingModule
   ],
   providers: [HeroService,HeroSearchService],
   bootstrap: [AppComponent]
