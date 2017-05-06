@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router }            from '@angular/router';
+import { Router } from '@angular/router';
 
-import { Observable }        from 'rxjs/Observable';
-import { Subject }           from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 
 // Observable class extensions
 import 'rxjs/add/observable/of';
@@ -12,11 +12,11 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
-import { Hero } from '../../../../beans/hero';
-import { HeroSearchService } from '../../../../services/hero-search.service';
+import { Hero } from 'app/model/hero';
+import { HeroSearchService } from 'app/services/hero-search.service';
 
 @Component({
-  selector: 'hero-search',
+  selector: 'toh-hero-search',
   templateUrl: './hero-search.component.html',
   styleUrls: [ './hero-search.component.css' ],
   providers: []
@@ -51,9 +51,9 @@ export class HeroSearchComponent implements OnInit {
         return Observable.of<Hero[]>([]);
       });
   }
-  
+
   gotoDetail(hero: Hero): void {
-    let link = ['/heroes', hero.id];
+    const link = ['/heroes', hero.id];
     this.router.navigate(link);
   }
 }

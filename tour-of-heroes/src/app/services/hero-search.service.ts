@@ -5,8 +5,8 @@ import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/map';
 
-import { Hero } from '../beans/hero';
-import { environment } from '../../environments/environment';
+import { Hero } from 'app/model/hero';
+import { environment } from 'environments/environment';
 
 @Injectable()
 export class HeroSearchService {

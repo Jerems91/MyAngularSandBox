@@ -1,9 +1,9 @@
-import { HeroesComponent } from './components/heroes/heroes.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
-import { HeroesListComponent } from './components/heroes-list/heroes-list.component';
+import { HeroesComponent } from './heroes.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { HeroesListComponent } from './heroes-list/heroes-list.component';
 
 const routes: Routes = [
   {
@@ -24,17 +24,7 @@ const routes: Routes = [
         component: HeroDetailComponent
       }
     ]
-    /*redirectTo: 'heroes/list',
-    pathMatch: 'full'*/
   },
-  /*{
-    path: 'heroes/list',
-    component: HeroesListComponent
-  },
-  {
-    path: 'heroes/:id',
-    component: HeroDetailComponent
-  }*/
 ];
 
 @NgModule({

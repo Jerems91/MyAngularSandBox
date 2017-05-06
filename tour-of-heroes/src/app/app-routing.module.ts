@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {RouterModule,Routes} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
   {
@@ -9,11 +9,11 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: './features/dashboard/dashboard.module#DashboardModule'
+    loadChildren: './dashboard/dashboard.module#DashboardModule'
   },
   {
     path: 'heroes',
-    loadChildren: './features/heroes/heroes.module#HeroesModule'
+    loadChildren: './heroes/heroes.module#HeroesModule'
   }
 ];
 

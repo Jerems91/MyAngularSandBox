@@ -3,9 +3,9 @@ import {Headers, Http} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import {Hero} from '../beans/hero';
+import {Hero} from 'app/model/hero';
 
-import { environment } from '../../environments/environment';
+import { environment } from 'environments/environment';
 
 @Injectable()
 export class HeroService {

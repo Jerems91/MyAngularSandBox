@@ -4,13 +4,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
-import { DashboardModule } from './features/dashboard/dashboard.module';
-import { HeroesModule } from './features/heroes/heroes.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { HeroesModule } from './heroes/heroes.module';
 
 import { AppComponent } from './app.component';
 
 import { HeroService } from './services/hero.service';
-import { HeroSearchService } from './services/hero-search.service';   
+import { HeroSearchService } from './services/hero-search.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { HeroSearchService } from './services/hero-search.service';
     HeroesModule,
     AppRoutingModule
   ],
-  providers: [HeroService,HeroSearchService],
+  providers: [HeroService, HeroSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

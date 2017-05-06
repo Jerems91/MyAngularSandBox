@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 
-import {Hero} from '../../../../beans/hero';
-import {HeroService} from '../../../../services/hero.service';
+import {Hero} from 'app/model/hero';
+import {HeroService} from 'app/services/hero.service';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'toh-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })

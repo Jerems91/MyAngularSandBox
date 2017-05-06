@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Hero } from '../../../../beans/hero';
-import { HeroService } from '../../../../services/hero.service';
+import { Hero } from 'app/model/hero';
+import { HeroService } from 'app/services/hero.service';
 
 @Component({
-  selector: 'app-heroes-list',
+  selector: 'toh-heroes-list',
   templateUrl: './heroes-list.component.html',
   styleUrls: ['./heroes-list.component.css']
 })
 export class HeroesListComponent implements OnInit {
   heroes: Hero[];
+  selectedHero: Hero;
   constructor(
     private heroService: HeroService,
     private router: Router
@@ -18,7 +19,6 @@ export class HeroesListComponent implements OnInit {
   getHeroes(): void {
     this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   }
-  selectedHero: Hero;
   onSelect(hero: Hero) {
     this.selectedHero = hero;
   }
@@ -26,7 +26,7 @@ export class HeroesListComponent implements OnInit {
     this.getHeroes();
   }
   gotoDetail(): void {
-    this.router.navigate(['/heroes',this.selectedHero.id]);
+    this.router.navigate(['/heroes', this.selectedHero.id]);
   }
   add(name: string): void {
     name = name.trim();
@@ -44,6 +44,6 @@ export class HeroesListComponent implements OnInit {
       if (this.selectedHero === hero) {
         this.selectedHero = null;
       }
-    })
+    });
   }
 }

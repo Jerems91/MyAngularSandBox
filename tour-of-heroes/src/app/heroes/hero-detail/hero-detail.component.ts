@@ -4,11 +4,11 @@ import {Location} from '@angular/common';
 
 import 'rxjs/add/operator/switchMap';
 
-import {Hero} from '../../../../beans/hero';
-import {HeroService} from '../../../../services/hero.service';
+import {Hero} from 'app/model/hero';
+import {HeroService} from 'app/services/hero.service';
 
 @Component({
-  selector: 'hero-detail',
+  selector: 'toh-hero-detail',
   templateUrl: './hero-detail.component.html',
   styleUrls: ['./hero-detail.component.css']
 })
