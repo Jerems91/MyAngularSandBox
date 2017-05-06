@@ -1,16 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { ServicesModule } from './services/services.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { HeroesModule } from './heroes/heroes.module';
 
 import { AppComponent } from './app.component';
-
-import { HeroService } from './services/hero.service';
-import { HeroSearchService } from './services/hero-search.service';
 
 @NgModule({
   declarations: [
@@ -18,12 +15,11 @@ import { HeroSearchService } from './services/hero-search.service';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
     DashboardModule,
     HeroesModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServicesModule.forRoot()
   ],
-  providers: [HeroService, HeroSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
