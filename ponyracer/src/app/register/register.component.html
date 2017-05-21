@@ -1,0 +1,24 @@
+<form (ngSubmit)="register()" [formGroup]="userForm">
+  <div class="form-group">
+    <label for="login" id="login-label">Login</label>
+    <input type="text" id="login" class="form-control" formControlName="login">
+  </div>
+  <div *ngIf="userForm.get('login').dirty && userForm.get('login').hasError('required')">
+    Login is required
+  </div>
+  <div class="form-group">
+    <label for="password" id="password-label">Password</label>
+    <input type="password" id="password" class="form-control" formControlName="password">
+  </div>
+  <div *ngIf="userForm.get('password').dirty && userForm.get('password').hasError('required')">
+    password is required
+  </div>
+  <div class="form-group">
+    <label for="birthYear" id="birthYear-label">BirthYear</label>
+    <input type="number" id="birthYear" class="form-control" formControlName="birthYear">
+  </div>
+  <div *ngIf="userForm.get('birthYear').dirty && userForm.get('birthYear').hasError('required')">
+    birthYear is required
+  </div>
+  <button type="submit" [disabled]="userForm.invalid">Let’s go!</button>
+</form>
