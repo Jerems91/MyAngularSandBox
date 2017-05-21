@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-import { Hero } from 'app/model/hero';
-import { HeroService } from 'app/services/hero.service';
+import { Hero } from 'models';
+import { HeroService } from './../../services/hero.service';
 
 @Component({
   selector: 'toh-heroes-list',

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="list-group">
-    <button class="list-group-item" *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.active]="hero===selectedHero">
+    <div class="list-group-item" *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.active]="hero===selectedHero">
       <span class="badge">{{hero.id}}</span> <b>{{hero.name}}</b>
       <div *ngIf="hero===selectedHero">
         <div class="btn-group btn-group-xs">
@@ -8,7 +8,7 @@
           <button class="btn btn-default" (click)="gotoDetail()">Edit</button>
         </div>  
       </div>
-    </button>
+    </div>
   </div>
 </div>
 <div class="container">
@@ -16,4 +16,3 @@
   <input #heroName />
   <button (click)="add(heroName.value); heroName.value=''">Add</button>
 </div>
-

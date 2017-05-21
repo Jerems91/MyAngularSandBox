@@ -1,12 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
-import { HeroesRoutingModule } from './heroes-routing.module';
-
-import { HeroesComponent } from './heroes.component';
-import { HeroesListComponent } from './heroes-list/heroes-list.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { HeroesListComponent } from './heroes-list/heroes-list.component';
+import { HeroesRoutingModule } from './heroes-routing.module';
+import { HeroesComponent } from './heroes.component';
 
 @NgModule({
   imports: [

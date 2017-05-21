@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-
-import {Hero} from 'app/model/hero';
-import {HeroService} from 'app/services/hero.service';
+import { Component, OnInit } from '@angular/core';
+import { Hero } from 'models';
+import { HeroService } from './../services/hero.service';
 
 @Component({
   selector: 'toh-dashboard',
