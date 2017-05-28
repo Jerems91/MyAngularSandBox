@@ -1,6 +1,7 @@
 import { UserModel } from '../models/user.model';
 import { UserService } from '../user.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
@@ -16,7 +17,8 @@ export class MenuComponent implements OnInit, OnDestroy {
   navbarCollapsed = true;
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -33,5 +35,15 @@ export class MenuComponent implements OnInit, OnDestroy {
     }
   }
 
+  logout(event: Event) {
+    event.preventDefault();
+    this.userService.logout();
+    this.router.navigate(['/']);
+  }
+
+  /*logout() {
+    this.userService.logout();
+    this.router.navigate(['/']);
+  }*/
 
 }

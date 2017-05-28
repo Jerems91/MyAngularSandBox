@@ -62,6 +62,8 @@ describe('UserService', () => {
   }));
 
   it('should authenticate a user', async(() => {
+    const credentials = {login: 'cedric', password: 'hello'};
+
     // fake response
     const response = new Response(new ResponseOptions({ body: user }));
     // return the response if we have a connection to the MockBackend
@@ -69,15 +71,17 @@ describe('UserService', () => {
       expect(connection.request.url)
         .toBe('http://ponyracer.ninja-squad.com/api/users/authentication');
       expect(connection.request.method).toBe(RequestMethod.Post);
+      expect(JSON.parse(connection.request.getBody())).toEqual(credentials);
       connection.mockRespond(response);
     });
 
-    // spy on the store method
-    spyOn(userService, 'storeLoggedInUser');
+    // spy on userEvents
+    spyOn(userService.userEvents, 'next');
 
-    const credentials = { login: 'cedric', password: 'hello' };
-    userService.authenticate(credentials)
-      .subscribe(() => expect(userService.storeLoggedInUser).toHaveBeenCalledWith(user));
+    userService.authenticate(credentials).subscribe(res => {
+      expect(res.id).toBe(1, 'You should transform the Response into a user using the `json()` method.');
+      expect(userService.userEvents.next).toHaveBeenCalledWith(res);
+    });
   }));
 
   it('should store the logged in user', () => {
@@ -106,5 +110,15 @@ describe('UserService', () => {
     userService.retrieveUser();
 
     expect(userService.userEvents.next).not.toHaveBeenCalled();
+  });
+
+  it('should logout the user', () => {
+    spyOn(userService.userEvents, 'next');
+    spyOn(mockLocalStorage, 'removeItem');
+
+    userService.logout();
+
+    expect(userService.userEvents.next).toHaveBeenCalledWith(null);
+    expect(mockLocalStorage.removeItem).toHaveBeenCalledWith('rememberMe');
   });
 });
