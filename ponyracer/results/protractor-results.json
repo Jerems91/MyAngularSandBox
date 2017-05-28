@@ -6,6 +6,10 @@
         "passed": true
       }
     ],
+<<<<<<< HEAD
     "duration": 1757
+=======
+    "duration": 1572
+>>>>>>> branch 'develop' of https://github.com/Jerems91/MyAngularSandBox.git
   }
 ]
