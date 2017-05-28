@@ -13,7 +13,9 @@ export class UserService {
 
   constructor(
     private http: Http
-  ) { }
+  ) {
+    this.retrieveUser();
+  }
 
   register(login: string, password: string, birthYear: number): Observable<any> {
     const data = { login, password, birthYear };
@@ -24,7 +26,19 @@ export class UserService {
   authenticate(credentials: { login: string; password: string }): Observable<UserModel> {
     return this.http.post('http://ponyracer.ninja-squad.com/api/users/authentication', credentials)
       .map(response => response.json() as UserModel)
-      .do(user => this.userEvents.next(user));
+      .do(user => this.storeLoggedInUser(user));
+  }
+
+  storeLoggedInUser(user: UserModel) {
+    this.userEvents.next(user);
+    window.localStorage.setItem('rememberMe', JSON.stringify(user));
+  }
+
+  retrieveUser() {
+    const userString = window.localStorage.getItem('rememberMe');
+    if (userString) {
+      this.userEvents.next(JSON.parse(userString));
+    }
   }
 
 }
