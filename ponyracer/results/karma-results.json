@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 {"browsers":{"77446743":{"id":"77446743","fullName":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36","name":"Chrome 58.0.3029 (Windows 10 0.0.0)","state":5,"lastResult":{"success":37,"failed":0,"skipped":0,"total":37,"totalTime":2104,"netTime":3419,"error":false,"disconnected":false},"disconnectsCount":0}},"result":{},"summary":{"success":37,"failed":0,"error":false,"disconnected":false,"exitCode":0}}
-=======
-{"browsers":{"50356800":{"id":"50356800","fullName":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36","name":"Chrome 58.0.3029 (Windows 10 0.0.0)","state":5,"lastResult":{"success":34,"failed":0,"skipped":0,"total":34,"totalTime":3036,"netTime":3005,"error":false,"disconnected":false},"disconnectsCount":0}},"result":{},"summary":{"success":34,"failed":0,"error":false,"disconnected":false,"exitCode":0}}
->>>>>>> branch 'develop' of https://github.com/Jerems91/MyAngularSandBox.git

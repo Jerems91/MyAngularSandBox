@@ -35,12 +35,9 @@ describe('HomeComponent', () => {
     const element = fixture.nativeElement;
     fixture.detectChanges();
 
-<<<<<<< HEAD
     fixture.componentInstance.user = null;
     fixture.detectChanges();
 
-=======
->>>>>>> branch 'develop' of https://github.com/Jerems91/MyAngularSandBox.git
     const button = element.querySelector('a[href="/login"]');
     expect(button).not.toBeNull('You should have an `a` element to display the link to the login. Maybe you forgot to use `routerLink`?');
     expect(button.textContent).toContain('Login', 'The link should have a text');

@@ -1,7 +1,6 @@
 import { UserModel } from './models/user.model';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-<<<<<<< HEAD
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { Observable } from 'rxjs/Observable';
@@ -11,17 +10,6 @@ import 'rxjs/add/operator/do';
 export class UserService {
 
   userEvents = new BehaviorSubject<UserModel>(undefined);
-=======
-
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
-
-@Injectable()
-export class UserService {
-
-  userEvents = new Subject<UserModel>();
->>>>>>> branch 'develop' of https://github.com/Jerems91/MyAngularSandBox.git
 
   constructor(
     private http: Http

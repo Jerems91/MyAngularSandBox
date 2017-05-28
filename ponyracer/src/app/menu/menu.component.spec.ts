@@ -118,43 +118,4 @@ describe('MenuComponent', () => {
 
     expect(component.userEventsSubscription.unsubscribe).toHaveBeenCalled();
   });
-
-  it('should listen to userEvents in ngOnInit', async(() => {
-    const component = new MenuComponent(fakeUserService);
-    component.ngOnInit();
-
-    const user = { login: 'cedric', money: 200 } as UserModel;
-
-    fakeUserService.userEvents.subscribe(() => {
-      expect(component.user).toBe(user, 'Your component should listen to the `userEvents` observable');
-    });
-
-    fakeUserService.userEvents.next(user);
-  }));
-
-  it('should display the user if logged', () => {
-    const fixture = TestBed.createComponent(MenuComponent);
-    fixture.detectChanges();
-
-    const component = fixture.componentInstance;
-    component.user = { login: 'cedric', money: 200 } as UserModel;
-
-    fixture.detectChanges();
-
-    const element = fixture.nativeElement;
-    const info = element.querySelector('span.nav-item.navbar-text.mr-2');
-    expect(info)
-      .not.toBeNull('You should have a `span` element with the classes `nav-item navbar-text mr-2` to display the user info');
-    expect(info.textContent).toContain('cedric', 'You should display the user\'s name in a `span` element');
-    expect(info.textContent).toContain('200', 'You should display the user\'s score in a `span` element');
-  });
-
-  it('should unsubscribe on destroy', () => {
-    const component = new MenuComponent(fakeUserService);
-    component.ngOnInit();
-    spyOn(component.userEventsSubscription, 'unsubscribe');
-    component.ngOnDestroy();
-
-    expect(component.userEventsSubscription.unsubscribe).toHaveBeenCalled();
-  });
 });
